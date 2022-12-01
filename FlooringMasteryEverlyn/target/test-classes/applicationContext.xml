@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean definitions go here -->
+
+    <bean id="FlooringDaoStub" class="com.ev.flooring.service.FlooringMasteryDaoStubImpl"/>
+    <bean id="auditDaoStub" class="com.ev.flooring.service.FlooringMasteryAuditDaoStubImpl"/>
+    <bean id="serviceLayer" class="com.ev.flooring.service.FlooringMasteryServiceImpl">
+        <constructor-arg ref="FlooringDaoStub"/>
+        <constructor-arg ref="auditDaoStub"/>
+    </bean>
+</beans>
