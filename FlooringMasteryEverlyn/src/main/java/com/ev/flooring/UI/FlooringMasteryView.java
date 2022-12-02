@@ -63,46 +63,6 @@ public class FlooringMasteryView {
         return state;
     }
 
-    public String getProduct() throws FlooringMasteryDataValidationException {
-        io.print("***** Products *****");
-        io.print("1. Tile, $3.50, $4.15");
-        io.print("2. Metal, $4.15, $4.75");
-        io.print("3. Wood, $3.75, $4.10");
-        io.print("");
-        int product = io.readInt("Please input Product: ", 1, 3);
-        switch(product){
-            case 1:
-                return "Tile";
-            case 2:
-                return "Laminate";
-            case 3:
-                return "Metal";
-
-        }
-        return null;
-    }
-
-    public String getUpdatedproduct() throws FlooringMasteryDataValidationException {
-        io.print("***** Products *****");
-        io.print("1. Tile, $3.50, $4.15");
-        io.print("2. Metal, $4.15, $4.75");
-        io.print("3. Wood, $3.75, $4.10");
-        io.print("");
-        io.print("4. No Change");
-        io.print("");
-        int product = io.readInt("Please input new Product: ",1,4);
-        switch(product){
-            case 1:
-                return "Tile";
-            case 2:
-                return "Metal";
-            case 3:
-                return "Wood";
-            case 4:
-                return "";
-        }
-        return null;
-    }
     public BigDecimal getArea() throws FlooringMasteryDataValidationException {
         BigDecimal area = io.readBigDecimal("Please input area: ");
         return area;
@@ -162,6 +122,48 @@ public class FlooringMasteryView {
         io.print("Tax: $" + order.getTax());
         io.print("Total: $" + order.getTotal());
         io.print("");
+    }
+
+
+    public String getProduct() throws FlooringMasteryDataValidationException {
+        io.print("***** Products *****");
+        io.print("1. Tile, $3.50, $4.15");
+        io.print("2. Metal, $4.15, $4.75");
+        io.print("3. Wood, $3.75, $4.10");
+        io.print("");
+        int product = io.readInt("Please input Product: ", 1, 3);
+        switch(product){
+            case 1:
+                return "Tile";
+            case 2:
+                return "Laminate";
+            case 3:
+                return "Metal";
+
+        }
+        return null;
+    }
+
+    public String getUpdatedproduct() throws FlooringMasteryDataValidationException {
+        io.print("***** Products *****");
+        io.print("1. Tile, $3.50, $4.15");
+        io.print("2. Metal, $4.15, $4.75");
+        io.print("3. Wood, $3.75, $4.10");
+        io.print("");
+        io.print("4. No Change");
+        io.print("");
+        int product = io.readInt("Please input new Product: ",1,4);
+        switch(product){
+            case 1:
+                return "Tile";
+            case 2:
+                return "Metal";
+            case 3:
+                return "Wood";
+            case 4:
+                return "";
+        }
+        return null;
     }
     public void displayErrorMessage(String message) {
         io.print(message + '\n');
